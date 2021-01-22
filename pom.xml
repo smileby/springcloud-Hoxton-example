@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.baiyun</groupId>
+  <artifactId>springcloud-Hoxton-example</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>springcloud-cousul</module>
+    <module>springcloud-loadbalancer</module>
+    <module>springcloud-openfeign</module>
+    <module>springcloud-sentienl</module>
+    <module>springcloud-gateway</module>
+    <module>springcloud-nacos-discovery</module>
+    <module>springcloud-nacos-config</module>
+  </modules>
+
+  <name>springcloud-Hoxton-example</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.2.9.RELEASE</version>
+  </parent>
+
+  <dependencyManagement>
+    <!--查看版本对应  https://start.spring.io/actuator/info -->
+      <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
+        <dependency>
+          <groupId>org.springframework.cloud</groupId>
+          <artifactId>spring-cloud-dependencies</artifactId>
+          <version>Hoxton.SR9</version>
+          <type>pom</type>
+          <scope>import</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>com.alibaba.cloud</groupId>
+          <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+          <version>2.2.1.RELEASE</version>
+          <type>pom</type>
+          <scope>import</scope>
+        </dependency>
+      </dependencies>
+  </dependencyManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>UTF-8</encoding>
+          <compilerArguments>
+            <verbose />
+          </compilerArguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
