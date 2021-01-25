@@ -1,0 +1,11 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: springcloud-nacos-discovery-provider  #注册中心的服务名称，客户端调用时使用
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+# 更多配置参考： https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-discovery

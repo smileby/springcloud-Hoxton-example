@@ -44,3 +44,13 @@
 > 服务总线：
 >> * Bus：SpringCloud原生的服务总线组件，现在风头也被Nacos抢了。
 >> * Nacos：来自于SpringCloudAlibaba，后来居上，把Bus给替换了。
+
+* nacos-server从github下载 nacos-server-2.0.0-ALPHA.1.zip，windows环境点击startup.cmd启动
+* 访问127.0.0.1:8848/nacos/index.html
+
+| 应用 | 描述 | 
+| :--- | :--- |
+| springcloud-nacos-discovery-provider | 基于nacos的服务注册 | 
+| springcloud-nacos-discovery-consumer | 基于nacos的服务发现 |
+| springcloud-nacos-config | 基于nacos的配置中心 |
+| springcloud-openfeign | OpenFeign调用组件 |

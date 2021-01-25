@@ -3,10 +3,13 @@ package com.baiyun;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
-public class NacosDiscoveryApp {
+@EnableDiscoveryClient
+public class DiscoveryProviderApp {
+
     public static void main(String[] args) {
-        SpringApplication.run(NacosDiscoveryApp.class);
+        SpringApplication.run(DiscoveryProviderApp.class);
     }
 }
