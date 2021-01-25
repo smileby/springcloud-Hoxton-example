@@ -5,7 +5,7 @@ nacos-server    8848
 springcloud-nacos-discovery-provider    ===》 8001
 springcloud-nacos-discovery-consumer    ===》 8002
 springcloud-openfeign                   ===》 8003
-
+springcloud-nacos-config                ===》 8004
 
 
 

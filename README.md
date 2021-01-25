@@ -1,6 +1,11 @@
 # springcloud-Hoxton-example
  * SpringCloud 版本对应： Hoxton
  * 注册中心使用Nacos、Consul
+ 
+>  配置文件优先级（由高到低）：bootstrap.properties > bootstrap.yml > application.properties > application.yml
+ 
+
+ 
 > * ========================================
 > * springcloud-consul                      ===》
 > * springcloud-loadbalancer                ===》
