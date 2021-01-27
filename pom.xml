@@ -9,11 +9,7 @@
   <packaging>pom</packaging>
   <version>1.0-SNAPSHOT</version>
   <modules>
-    <module>springcloud-cousul</module>
-    <module>springcloud-loadbalancer</module>
     <module>springcloud-openfeign</module>
-    <module>springcloud-sentienl</module>
-    <module>springcloud-gateway</module>
     <module>springcloud-nacos-config</module>
     <module>springcloud-nacos-discovery-provider</module>
     <module>springcloud-nacos-discovery-consumer</module>
