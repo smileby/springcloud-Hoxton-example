@@ -1,8 +1,8 @@
-
-
-
+server:
+  port: 8004
 spring:
-  profiles: dev  # 环境标识
+  profiles:
+    active: dev
   application:
     name: springcloud-nacos-config
   cloud:
@@ -13,6 +13,8 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
-server:
-  port:  # 配置的格式
-  # 该配置文件对应配置中心的data-id为：springcloud-nacos-config-dev.yaml
+        prefix: springcloud-nacos-config
+        enabled: true
+logging:
+  level:
+    com.alibaba.nacos.client.config.impl: ERROR # 调整nacos-client端，频繁输出日志的问题

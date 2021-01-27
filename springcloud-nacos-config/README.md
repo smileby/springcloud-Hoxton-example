@@ -1,8 +1,11 @@
 # springcloud-nacos-config
 * Nacos配置中心
-
-
 > 使用nacos-config作为配置中心
+
+## 下载Nacos-server
+> 没找到国内的下载链接, 在github下载的server包，有点慢，挂VPN还行
+> startup.cmd 启动Nacos， 默认账号密码：nacos/nacos
+> 访问地址： 127.0.0.1:8848/nacos/index.html
 
 ## 引入nacos-config配置依赖
 ```
@@ -41,7 +44,6 @@ spring:
     ${prefix}-${spring.profiles.active}.${file-extension}
     
 ```
-
 
 | variable | value | desc |  
 | :--- | :--- | :--- |   
