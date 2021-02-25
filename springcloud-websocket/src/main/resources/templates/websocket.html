@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>websocket通讯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link th:href="@{/static/css/css.css}" rel="stylesheet">
+    <script th:src="@{/static/js/main.js}"></script>
+
+</head>
+<body>
+    <div class="talk_con">
+        <div class="talk_title">
+            <p>zhangsan</p>
+        </div>
+        <div class="talk_show" id="words">
+        </div>
+        <div class="talk_input">
+            <input type="text" class="talk_word" id="talkwords">
+            <input type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+    <div class="talk_con1">
+        <div class="talk_title">
+            <p>lisi</p>
+        </div>
+        <div class="talk_show" id="words1"> </div>
+        <div class="talk_input">
+            <input type="text" class="talk_word" id="talkwords1">
+            <input type="button" value="发送" class="talk_sub" id="talksub1">
+        </div>
+    </div>
+
+</body>
+
+</html>
