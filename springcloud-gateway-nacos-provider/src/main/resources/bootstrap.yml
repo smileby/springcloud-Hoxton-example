@@ -1,0 +1,11 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: springcloud-gateway-nacos-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+# 更多配置参考： https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-discovery

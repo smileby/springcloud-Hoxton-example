@@ -7,6 +7,9 @@ springcloud-nacos-discovery-consumer    ===》 8002
 springcloud-openfeign                   ===》 8003
 springcloud-nacos-config                ===》 8004
 springcloud-websocket                   ===》 8005
+springcloud-gateway                     ===》 8006
+springcloud-gateway-nacos-provider      ===》 8007
+springcloud-gateway-nacos-consumer      ===》 8008
 
 
 

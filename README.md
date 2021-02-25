@@ -59,3 +59,4 @@
 | springcloud-nacos-discovery-consumer | 基于nacos的服务发现 |
 | springcloud-nacos-config | 基于nacos的配置中心 |
 | springcloud-openfeign | OpenFeign调用组件 |
+| springcloud-websocket | springboot集成websocket |

@@ -1,0 +1,19 @@
+server:
+  port: 8008
+spring:
+  application:
+    name: springcloud-gateway-nacos-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        enabled: true
+
+ribbon:
+  nacos:
+    enable: true
+  ConnectTimeout: 60000
+  ReadTimeout: 60000
+  httpclient:
+    enabled: true
+# 更多配置参考： https://github.com/alibaba/spring-cloud-alibaba/wiki/Nacos-discovery

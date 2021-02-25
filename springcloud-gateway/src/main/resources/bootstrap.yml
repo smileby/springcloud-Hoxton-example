@@ -1,0 +1,25 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway:
+      routes:
+        -id: provider_route
+        uri: http://127.0.0.1:8007
+        predicates:
+        #访问地址
+          - Path=/provider/**
+        discovery:
+          locator:
+            enabled: true
+            lower-case-service-id: true
+        #去掉/gateway-provider后再转发请求到相应的服务
+        filter:
+          - StripPrefix=1
+          #- AddResponseHeader=X-Response-Default-Foo, Default-Bar
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        enabled: true
