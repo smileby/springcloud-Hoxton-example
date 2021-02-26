@@ -5,21 +5,49 @@ spring:
     name: springcloud-gateway
   cloud:
     gateway:
-      routes:
-        -id: provider_route
-        uri: http://127.0.0.1:8007
-        predicates:
-        #访问地址
-          - Path=/provider/**
-        discovery:
-          locator:
-            enabled: true
-            lower-case-service-id: true
-        #去掉/gateway-provider后再转发请求到相应的服务
-        filter:
-          - StripPrefix=1
-          #- AddResponseHeader=X-Response-Default-Foo, Default-Bar
+      enabled: true
+      # 使用discovery时，HelloController请求http://springcloud-gateway/springcloud-gateway-nacos-provider/discovery/getName
+      #discovery:
+        #locator:
+          # 表明gateway开启服务注册和发现的功能,，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router
+          # 这个router将以服务名开头的请求路径转发到对应的服务
+          #enabled: true
+          # 将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了），比如以/service-hi/*的请求路径被路由转发到服务名为service-hi的服务上。
+          #lower-case-service-id: true
+      routes: # HelloController请求http://springcloud-gateway/provider/discovery/getName
+        - id: provider_route
+          uri: lb://springcloud-gateway-nacos-provider
+          predicates:
+            - Path=/provider/** #访问地址
+          filters:
+            - StripPrefix=1
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
         enabled: true
+
+# 开启gateway 端点暴露
+#查询全局过滤器， http://localhost:9001/actuator/gateway/globalfilters
+#查询路由中的过滤器， http://localhost:9001/actuator/gateway/routefilters
+#刷新路由缓存， http://localhost:9001/actuator/gateway/refresh
+
+#展示路由列表,  http://localhost:9001/actuator/gateway/routes
+#获取单个路由的信息， http://localhost:9001/actuator/gateway/routes/host_route
+#创建路由，发送Post请求，  ../actuator/gateway/routes/{id_route_to_create}
+#删除路由，发送Delete请求： ../actuator/gateway/routes/{id_route_to_delete}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    gateway:
+      enabled: true
+    health:
+      show-details: always
+
+# 开启debug日志，便于排查问题
+logging:
+  level:
+    org.springframework: info
+

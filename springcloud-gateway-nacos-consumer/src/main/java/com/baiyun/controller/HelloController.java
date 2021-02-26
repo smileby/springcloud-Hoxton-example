@@ -16,6 +16,7 @@ public class HelloController {
     @RequestMapping("get")
     public String get(){
         //
+//        ResponseEntity<String> entity = restTemplate.getForEntity("http://springcloud-gateway/springcloud-gateway-nacos-provider/discovery/getName", String.class);
         ResponseEntity<String> entity = restTemplate.getForEntity("http://springcloud-gateway/provider/discovery/getName", String.class);
         System.out.println(entity.getBody());
         return entity.getBody();
