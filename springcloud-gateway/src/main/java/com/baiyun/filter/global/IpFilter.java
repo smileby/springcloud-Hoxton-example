@@ -47,7 +47,8 @@ public class IpFilter implements GlobalFilter, Ordered {
         if(valid){
             log.info("拦截IP ：[{}]，校验有效",ipAddress);
             exchange.getAttributes().put(IP_ADDRESS,ipAddress);
-                return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+            return chain.filter(exchange).then(Mono.fromRunnable(() -> {
+
             }));
         }else{
             log.info("拦截IP ：[{}]，校验无效",ipAddress);

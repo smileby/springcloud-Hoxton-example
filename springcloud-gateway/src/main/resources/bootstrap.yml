@@ -14,6 +14,7 @@ spring:
           #enabled: true
           # 将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了），比如以/service-hi/*的请求路径被路由转发到服务名为service-hi的服务上。
           #lower-case-service-id: true
+      # 如果动态路由配置启动，则注释掉routes
       routes: # HelloController请求http://springcloud-gateway/provider/discovery/getName
         - id: provider_route
           uri: lb://springcloud-gateway-nacos-provider
@@ -21,10 +22,19 @@ spring:
             - Path=/provider/** #访问地址
           filters:
             - StripPrefix=1
+            - Authentication
+            - CModifyRequest
+            - CModifyResponse
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
         enabled: true
+
+##动态路由配置
+gateway:
+  dynamic:
+    route:
+      enabled: true
 
 # 开启gateway 端点暴露
 #查询全局过滤器， http://localhost:9001/actuator/gateway/globalfilters
@@ -47,7 +57,7 @@ management:
       show-details: always
 
 # 开启debug日志，便于排查问题
-logging:
-  level:
-    org.springframework: info
+#logging:
+  #level:
+    #org.springframework: info
 

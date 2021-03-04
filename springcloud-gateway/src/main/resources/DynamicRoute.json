@@ -1,0 +1,37 @@
+[
+  {
+    "id":"provider_route",
+    "uri": "lb://springcloud-gateway-nacos-provider",
+    "predicates":[
+      {
+        "name":"Path",
+        "args":{
+          "patterns":"/provider/**"
+        }
+      },
+      {
+        "name":"Test",
+        "args":{
+          "datetime":"20200809"
+        }
+      }
+    ],
+    "filters": [
+      {
+        "name":"StripPrefix",
+        "args":{
+          "parts":1
+        }
+      },
+      {
+        "name":"Authentication"
+      },
+      {
+        "name":"CModifyRequest"
+      },
+      {
+        "name":"CModifyResponse"
+      }
+    ]
+  }
+]

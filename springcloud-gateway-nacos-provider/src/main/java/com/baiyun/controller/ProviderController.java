@@ -9,6 +9,7 @@ public class ProviderController {
 
     @RequestMapping("getName")
     public String getName(){
+//        throw new RuntimeException("provider 自定义异常！");
         return "springcloud-gateway-nacos-provider";
     }
 }

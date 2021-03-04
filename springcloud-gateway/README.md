@@ -202,7 +202,28 @@ logging:
 
 
 #### 动态路由
-待完善
+> 涉及类 ：
+
+com.baiyun.config.DynamicRouteConfig.java
+
+com.baiyun.route.NacosRouteDefinitionRepository.java
+
+com.baiyun.route.AbstractRouteDefinitionRepository.java
+
+> 配置文件
+```
+##如果动态路由配置启动，则注释掉配置文件中配置的routes
+
+##动态路由配置
+gateway:
+  dynamic:
+    route:
+      enabled: true
+```
+> Nacos配置
+nacos配置文件使用resource目录下的DynamicRoute.json
+
+dataId：dynamic     Group：gateway-group
 
 ### 过滤器Filter
 > 网关经常需要对路由请求进行过滤，如鉴权之后构造头部之类的，过滤的种类很多，如增加请求头、增加请求参数 、增加响应头和断路器等等功能，
@@ -227,3 +248,6 @@ logging:
 
 >> 另一种是 自定义过滤器工厂（继承AbstractGatewayFilterFactory类） , 选择自定义过滤器工厂的方式，
 可以在配置文件中配置过滤器
+
+### 参考资料
+Spring Cloud Gateway的动态路由 https://www.cnblogs.com/zlt2000/p/11712943.html
